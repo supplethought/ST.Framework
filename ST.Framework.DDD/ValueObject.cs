@@ -33,20 +33,20 @@ namespace ST.Framework.DDD
 			return item != null && Equals(item);
 		}
 
-        public virtual bool Equals(T other)
-        {
-	        return other != null && GetAttributesToIncludeInEqualityCheck().SequenceEqual(other.GetAttributesToIncludeInEqualityCheck());
-        }
+		public virtual bool Equals(T other)
+		{
+			return other != null && GetAttributesToIncludeInEqualityCheck().SequenceEqual(other.GetAttributesToIncludeInEqualityCheck());
+		}
 
-	    public static bool operator ==(ValueObject<T> left, ValueObject<T> right)
-        {
-            return Equals(left, right);
-        }
+		public static bool operator ==(ValueObject<T> left, ValueObject<T> right)
+		{
+			return Equals(left, right);
+		}
 
-        public static bool operator !=(ValueObject<T> left, ValueObject<T> right)
-        {
-            return !(left == right);
-        }
+		public static bool operator !=(ValueObject<T> left, ValueObject<T> right)
+		{
+			return !(left == right);
+		}
 
-    }
+	}
 }
